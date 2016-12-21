@@ -5,6 +5,11 @@ namespace Algorithm_Collection.Sort_Algorithms
 {
     public class MySortList<T> : List<T> where T : IComparable<T>
     {
+
+        private bool sorted = false;
+        private int combSortGap;
+        private const double combSortShrink = 1.3;
+
         public void StupidSort()
         {
             int position = 0;
@@ -16,19 +21,55 @@ namespace Algorithm_Collection.Sort_Algorithms
                 }
                 else
                 {
-                    T temp = this[position - 1];
-                    this[position - 1] = this[position];
-                    this[position] = temp;
+                    SwapElements(position, position - 1);
                     position -= 1;
                 }
             }
         }
 
+        public void CombSort()
+        {
+            combSortGap = Count;
+            while (!sorted)
+            {
+                // Update the combSortGap value for a next comb
+                combSortGap = (int)Math.Floor(combSortGap / combSortShrink);
+                if (combSortGap > 1)
+                {
+                    sorted = false; // We are never sorted as long as combSortGap > 1
+                }
+                else
+                {
+                    combSortGap = 1;
+                    sorted = true; // If there are no swaps this pass, we are done
+                }
+
+                // A single "comb" over the input list
+                int i = 0;
+                while (i + combSortGap < Count)
+                {   // See Shell sort for a similar idea
+                    if (this[i].CompareTo(this[i + combSortGap]) > 0)
+                    {
+                        SwapElements(i, i + combSortGap);
+                        sorted = false;
+                    }
+                    i++;
+                }
+            }
+        }
+
+        private void SwapElements(int i, int j)
+        {
+            T temp = this[j];
+            this[j] = this[i];
+            this[i] = temp;
+        }
+
         public bool IsSorted()
         {
-            for(int i = 1; i < Count; i++)
+            for (int i = 1; i < Count; i++)
             {
-                if(this[i-1].CompareTo(this[i]) > 0)
+                if (this[i - 1].CompareTo(this[i]) > 0)
                 {
                     return false;
                 }
