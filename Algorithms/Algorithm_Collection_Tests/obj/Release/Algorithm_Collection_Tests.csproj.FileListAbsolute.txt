@@ -1,9 +1,0 @@
-C:\Users\Felix\Documents\Algorithm_Collection\Algorithm_Collection\Algorithm_Collection_Tests\bin\Release\Algorithm_Collection_Tests.dll
-C:\Users\Felix\Documents\Algorithm_Collection\Algorithm_Collection\Algorithm_Collection_Tests\bin\Release\Algorithm_Collection_Tests.pdb
-C:\Users\Felix\Documents\Algorithm_Collection\Algorithm_Collection\Algorithm_Collection_Tests\bin\Release\Algorithm_Collection.dll
-C:\Users\Felix\Documents\Algorithm_Collection\Algorithm_Collection\Algorithm_Collection_Tests\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\Users\Felix\Documents\Algorithm_Collection\Algorithm_Collection\Algorithm_Collection_Tests\bin\Release\Algorithm_Collection.pdb
-C:\Users\Felix\Documents\Algorithm_Collection\Algorithm_Collection\Algorithm_Collection_Tests\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
-C:\Users\Felix\Documents\Algorithm_Collection\Algorithm_Collection\Algorithm_Collection_Tests\obj\Release\Algorithm_Collection_Tests.csprojResolveAssemblyReference.cache
-C:\Users\Felix\Documents\Algorithm_Collection\Algorithm_Collection\Algorithm_Collection_Tests\obj\Release\Algorithm_Collection_Tests.dll
-C:\Users\Felix\Documents\Algorithm_Collection\Algorithm_Collection\Algorithm_Collection_Tests\obj\Release\Algorithm_Collection_Tests.pdb
