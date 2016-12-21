@@ -1,0 +1,5 @@
+C:\Users\Felix\Documents\Algorithm_Collection\Algorithm_Collection\Algorithm_Collection\bin\Debug\Algorithm_Collection.dll
+C:\Users\Felix\Documents\Algorithm_Collection\Algorithm_Collection\Algorithm_Collection\bin\Debug\Algorithm_Collection.pdb
+C:\Users\Felix\Documents\Algorithm_Collection\Algorithm_Collection\Algorithm_Collection\obj\Debug\Algorithm_Collection.csprojResolveAssemblyReference.cache
+C:\Users\Felix\Documents\Algorithm_Collection\Algorithm_Collection\Algorithm_Collection\obj\Debug\Algorithm_Collection.dll
+C:\Users\Felix\Documents\Algorithm_Collection\Algorithm_Collection\Algorithm_Collection\obj\Debug\Algorithm_Collection.pdb
