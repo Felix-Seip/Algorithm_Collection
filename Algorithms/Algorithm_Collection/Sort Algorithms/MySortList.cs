@@ -77,6 +77,26 @@ namespace Algorithm_Collection.Sort_Algorithms
             }
         }
 
+        /// <summary>
+        /// Runs a Insertion sort Algorithm
+        /// Minimal Complexity: O(2(n-1))
+        /// Maximal Complexity: O(n^2)
+        /// </summary>
+        public void InsertionSort()
+        {
+            for (int i = 1; i < Count; i++)
+            {
+                T t = this[i];
+                int j = i;
+                while (j > 0 && this[j - 1].CompareTo(t) > 0)
+                {
+                    this[j] = this[j - 1];
+                    j--;
+                }
+                this[j] = t;
+            }
+        }
+
         private void SwapElements(int i, int j)
         {
             T temp = this[j];
