@@ -58,6 +58,25 @@ namespace Algorithm_Collection.Sort_Algorithms
             }
         }
 
+        /// <summary>
+        /// Run a SelectionSort Algorithm
+        /// Complexity: O(n^2)
+        /// /// </summary>
+        public void SelectionSort()
+        {
+            int min = -1;
+            for (int i = 0; i < Count - 1; i++)
+            {
+                min = i;
+                for (int k = i + 1; k < Count; k++)
+                {
+                    if (this[min].CompareTo(this[k]) > 0)
+                        min = k;
+                }
+                SwapElements(i, min);
+            }
+        }
+
         private void SwapElements(int i, int j)
         {
             T temp = this[j];

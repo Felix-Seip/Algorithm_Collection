@@ -1,2 +1,5 @@
 \Algorithms\Algorithm_Collection\bin\Debug/
 \Algorithms\Algorithm_Collection\bin\Release/
+*.pdb
+*.cache
+*.dll
