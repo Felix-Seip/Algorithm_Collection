@@ -97,6 +97,25 @@ namespace Algorithm_Collection.Sort_Algorithms
             }
         }
 
+
+        public void BubbleSort()
+        {
+            for (int i = Count - 1; i >= 0; i--)
+            {
+                sorted = true;
+                for (int k = 1; k <= i; k++)
+                {
+                    if (this[k - 1].CompareTo(this[k]) > 0)
+                    {
+                        sorted = false;
+                        SwapElements(k - 1, k);
+                    }
+                }
+                if (sorted)
+                    break;
+            }
+        }
+
         private void SwapElements(int i, int j)
         {
             T temp = this[j];
@@ -104,6 +123,10 @@ namespace Algorithm_Collection.Sort_Algorithms
             this[i] = temp;
         }
 
+        /// <summary>
+        /// Checks if a List is Sorted
+        /// </summary>
+        /// <returns></returns>
         public bool IsSorted()
         {
             for (int i = 1; i < Count; i++)
