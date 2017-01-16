@@ -27,6 +27,16 @@ namespace Algorithm_Collection.Sort_Algorithms
             }
         }
 
+        public void QuickSort(int leftIndex, int rightIndex)
+        {
+            if (leftIndex < rightIndex)
+            {
+                int pivot = SplitList(leftIndex, rightIndex);
+                QuickSort(leftIndex, pivot - 1);
+                QuickSort(pivot + 1, rightIndex);
+            }
+        }
+
         public void CombSort()
         {
             combSortGap = Count;
@@ -114,6 +124,48 @@ namespace Algorithm_Collection.Sort_Algorithms
                 if (sorted)
                     break;
             }
+        }
+
+        /// <summary>
+        /// Splits the for the pivot Element
+        /// Is used for the QuickSort
+        /// </summary>
+        /// <param name="leftIndex"></param>
+        /// <param name="rightIndex"></param>
+        private int SplitList(int leftIndex, int rightIndex)
+        {
+            int i = leftIndex;
+            //Starte mit j links vom Pivotelement
+            int j = rightIndex - 1;
+            T pivot = this[rightIndex];
+
+            do
+            {
+                //Suche von links ein Element, welches größer als das Pivotelement ist
+                while (this[i].CompareTo(pivot) <= 0 && i < rightIndex)
+                    i += 1;
+
+                //Suche von rechts ein Element, welches kleiner als das Pivotelement ist
+                while (this[j].CompareTo(pivot) >= 0 && j > leftIndex)
+                    j -= 1;
+
+                if (i < j)
+                {
+                    // tausche this[i] mit this[j]
+                    SwapElements(i, j);                    
+                }
+
+            } while (i < j);
+            //solange i an j nicht vorbeigelaufen ist 
+
+            // Tausche Pivotelement (this[rechts]) mit neuer endgültiger Position (this[i])
+
+            if (this[i].CompareTo(pivot) > 0)
+            {
+                // tausche this[i] mit this[rechts]
+                SwapElements(i, rightIndex);
+            }
+            return i; // gib die Position des Pivotelements zurück
         }
 
         private void SwapElements(int i, int j)

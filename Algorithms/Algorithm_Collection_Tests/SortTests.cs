@@ -7,7 +7,7 @@ namespace Algorithm_Collection_Tests
     [TestClass]
     public class SortTests
     {
-        private const int cListCount = 100;
+        private const int cListCount = 10000;
         private Random random;
         MySortList<int> intList = new MySortList<int>();
 
@@ -52,6 +52,12 @@ namespace Algorithm_Collection_Tests
         public void CombSortTest()
         {
             intList.CombSort();
+            Assert.IsTrue(intList.IsSorted());
+        }
+        [TestMethod]
+        public void QuickSortTest()
+        {
+            intList.QuickSort(0,intList.Count-1);
             Assert.IsTrue(intList.IsSorted());
         }
     }
