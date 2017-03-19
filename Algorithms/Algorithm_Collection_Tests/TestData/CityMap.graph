@@ -1,0 +1,29 @@
+﻿<Nodes>
+Osnabrück [60,70] 
+Bielefeld [110, 110] 
+Hannover [215, 50]
+Magdeburg [385, 90] 
+Dortmund [10,180] 
+Kassel [200,215]
+Göttingen [230,185] 
+Leipzig [450,200] 
+Bad Hersfeld [210,280] 
+Jena [390,270]
+Dresden [580,250]
+<Edges>
+Osnabrück-Bielefeld (104)
+Osnabrück-Dortmund (118)
+Dortmund-Bielefeld (113) 
+Bielefeld-Hannover (112)
+Dortmund-Kassel (160)
+Kassel-Göttingen (50) 
+Göttingen-Hannover (126) 
+Hannover-Magdeburg (151)
+Magdeburg-Leipzig (126)
+Leipzig-Dresden (116)
+Dresden-Jena (181)
+Jena-Leipzig (88) 
+Jena-Bad Hersfeld (166) 
+Bad Hersfeld-Kassel (68)
+Kassel-Leipzig (249)
+Kassel-Bielefeld (139)

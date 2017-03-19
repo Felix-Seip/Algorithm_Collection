@@ -3,3 +3,5 @@
 *.pdb
 *.cache
 *.dll
+*.cache
+Algorithms/Algorithm_Collection/obj/Release/DesignTimeResolveAssemblyReferencesInput.cache

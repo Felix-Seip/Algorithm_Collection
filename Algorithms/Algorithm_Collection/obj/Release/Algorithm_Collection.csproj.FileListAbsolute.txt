@@ -2,3 +2,10 @@ C:\Users\Felix\Documents\Algorithm_Collection\Algorithm_Collection\Algorithm_Col
 C:\Users\Felix\Documents\Algorithm_Collection\Algorithm_Collection\Algorithm_Collection\bin\Release\Algorithm_Collection.pdb
 C:\Users\Felix\Documents\Algorithm_Collection\Algorithm_Collection\Algorithm_Collection\obj\Release\Algorithm_Collection.dll
 C:\Users\Felix\Documents\Algorithm_Collection\Algorithm_Collection\Algorithm_Collection\obj\Release\Algorithm_Collection.pdb
+H:\Algorithm_Collection\Algorithms\Algorithm_Collection\bin\Release\Algorithm_Collection.dll
+H:\Algorithm_Collection\Algorithms\Algorithm_Collection\bin\Release\Algorithm_Collection.pdb
+H:\Algorithm_Collection\Algorithms\Algorithm_Collection\bin\Release\Math_Collection.dll
+H:\Algorithm_Collection\Algorithms\Algorithm_Collection\bin\Release\Math_Collection.pdb
+H:\Algorithm_Collection\Algorithms\Algorithm_Collection\obj\Release\Algorithm_Collection.csprojResolveAssemblyReference.cache
+H:\Algorithm_Collection\Algorithms\Algorithm_Collection\obj\Release\Algorithm_Collection.dll
+H:\Algorithm_Collection\Algorithms\Algorithm_Collection\obj\Release\Algorithm_Collection.pdb
