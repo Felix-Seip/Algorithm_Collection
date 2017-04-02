@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using System.Text;
 
 namespace Algorithm_Collection.Encryption
@@ -13,7 +14,7 @@ namespace Algorithm_Collection.Encryption
             _password = password;
 
             byte[] pass = Encoding.ASCII.GetBytes(password);
-            for(int i = 0; i < pass.Length; i++)
+            for (int i = 0; i < pass.Length; i++)
             {
                 _maxPrimeValue += pass[i];
             }
@@ -31,8 +32,8 @@ namespace Algorithm_Collection.Encryption
 
             long k = p * q;
             long m = (p - 1) * (q - 1);
-            long s = 1;
-            while (CheckCoPrimeness(s, m))
+            long s = 2;
+            while (!AreCoprimes(m, s))
             {
                 s = _randomGen.Next(1, (int)m);
             }
@@ -43,21 +44,24 @@ namespace Algorithm_Collection.Encryption
 
         private void GeneratePrimeSeed(ref long p, ref long q)
         {
-            while(!IsPrimeNubmer(p) || !IsPrimeNubmer(q))
+            while (!IsPrimeNubmer(p) || !IsPrimeNubmer(q))
             {
-                p = _randomGen.Next(1,(int)_maxPrimeValue) / 5;
-                q = _randomGen.Next(1, (int)_maxPrimeValue) / 5;
+                p = _randomGen.Next(1, (int)_maxPrimeValue / 10);
+                q = _randomGen.Next(1, (int)_maxPrimeValue / 10);
             }
         }
 
         private long CalculateT(long s, long m)
         {
-            long t = 0;
-            while((s * t) % m != 1)
+            s = s % m;
+            for (long t = 1; t < m; t++)
             {
-                t = _randomGen.Next(1, (int)_maxPrimeValue);
-            }
-            return t;
+                if ((s * t) % m == 1)
+                {
+                    return t;
+                }
+            }   
+            return 0;
         }
 
         private bool IsPrimeNubmer(long n)
@@ -75,16 +79,9 @@ namespace Algorithm_Collection.Encryption
             return true;
         }
 
-        private bool CheckCoPrimeness(long u, long v)
+        private bool AreCoprimes(long a, long b)
         {
-            while (u != 0 && v != 0)
-            {
-                if (u > v)
-                    u %= v;
-                else
-                    v %= u;
-            }
-            return Math.Max(u, v) == 1;
+            return BigInteger.GreatestCommonDivisor(a, b) == 1;
         }
     }
 }
