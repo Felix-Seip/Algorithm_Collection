@@ -1,6 +1,6 @@
 ﻿<Nodes>
 Berlin [704,337]
-Hamburg [467,218]
+START [467,218]
 Hannover [449,354]
 Magdeburg [581,383]
 Dortmund [291,451]
@@ -8,12 +8,12 @@ Kassel [432,474]
 Göttingen [462,448]
 Leipzig [634,472]
 Bad Hersfeld [447,522]
-Jena [579,516]
+END [579,516]
 Dresden [728,504]
 <Edges>
-Berlin-Hamburg (289)
+Berlin-START (289)
 Berlin-Magdeburg (156)
-Hamburg-Hannover (157)
+START-Hannover (157)
 Hannover-Magdeburg (146)
 Magdeburg-Leipzig (129)
 Berlin-Leipzig (194)
@@ -22,8 +22,8 @@ Dortmund-Kassel (166)
 Kassel-Göttingen (48)
 Göttingen-Hannover (124)
 Leipzig-Dresden (115)
-Dresden-Jena (176)
-Jena-Leipzig (88)
-Jena-Bad Hersfeld (166)
+Dresden-END (176)
+END-Leipzig (88)
+END-Bad Hersfeld (166)
 Bad Hersfeld-Kassel (68)
 Kassel-Leipzig (249)

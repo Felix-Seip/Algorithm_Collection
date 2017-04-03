@@ -1,9 +1,10 @@
 ﻿using Math_Collection.LinearAlgebra.Vectors;
 using System;
+using System.Collections.Generic;
 
 namespace Algorithm_Collection.Graph
 {
-	public class Edge
+	public class Edge : IEqualityComparer<Edge>
 	{
 		private double _weight;
 		/// <summary>
@@ -78,6 +79,29 @@ namespace Algorithm_Collection.Graph
 		public override string ToString()
 		{
 			return Start.Name + "-" + End.Name + " (" + (int)Weight + ")";
+		}
+
+		public override bool Equals(object obj)
+		{
+			Edge compareTo = obj as Edge;
+			if (compareTo == null)
+				return false;
+
+			return Start.Equals(compareTo.Start) && End.Equals(compareTo.End) && Weight.Equals(compareTo.Weight);
+		}
+
+		public bool Equals(Edge x, Edge y)
+		{
+			//Check whether the objects are the same object. 
+			if (Object.ReferenceEquals(x, y)) return true;
+
+			//Check whether the products' properties are equal. 
+			return x != null && y != null && x.Start.Equals(y.Start) && x.End.Equals(y.End) && x.Weight == y.Weight;
+		}
+
+		public int GetHashCode(Edge obj)
+		{
+			return obj.GetHashCode();
 		}
 	}
 }

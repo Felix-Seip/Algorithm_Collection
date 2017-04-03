@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace Algorithm_Collection.Graph
@@ -46,24 +47,7 @@ namespace Algorithm_Collection.Graph
 			Nodes = nodes;
 			Edges = edges;
 		}
-
-		/// <summary>
-		/// Contructor with graph file
-		/// </summary>
-		/// <param name="pathToGraphFile">Path to the .graph file</param>
-		public Graph(string pathToGraphFile)
-		{
-			if (String.IsNullOrEmpty(pathToGraphFile))
-				return;
-
-			if (!File.Exists(pathToGraphFile))
-				return;
-
-			Nodes = new List<Node>();
-			Edges = new List<Edge>();
-			GenerateNodesAndEdgesFromFile(pathToGraphFile);
-		}
-
+	
 		/// <summary>
 		/// Gets a node by the name
 		/// </summary>
@@ -74,7 +58,7 @@ namespace Algorithm_Collection.Graph
 		{
 			foreach (Node n in Nodes)
 			{
-				if (n.Name.Equals(name.ToLower()))
+				if (n.Name.ToLower().Equals(name.ToLower()))
 					return n;
 			}
 			return null;
@@ -90,83 +74,6 @@ namespace Algorithm_Collection.Graph
 				return null;
 
 			return Nodes.FindAll(node => node.Visited == false);
-		}
-
-		/// <summary>
-		/// Generate a graph from a .graph file
-		/// </summary>
-		/// <param name="pathToGraphFile">Path to .graph file</param>
-		private void GenerateNodesAndEdgesFromFile(string pathToGraphFile)
-		{
-			if (String.IsNullOrEmpty(pathToGraphFile))
-				return;
-
-			if (!File.Exists(pathToGraphFile))
-				return;
-
-			bool nodeInLine = false;
-			bool edgeInLine = false;
-			string[] allLines = File.ReadAllLines(pathToGraphFile);
-			foreach (string line in allLines)
-			{
-				line.Trim();
-
-				if (line.Equals("<Nodes>"))
-				{
-					nodeInLine = true;
-					edgeInLine = false;
-					continue;
-				}
-				if (line.Equals("<Edges>"))
-				{
-					nodeInLine = false;
-					edgeInLine = true;
-					continue;
-				}
-
-				if (nodeInLine)
-				{
-					try
-					{
-						string name = line.Substring(0, line.IndexOf('[') - 1);
-						string x = line.Substring(line.IndexOf('[') + 1, line.IndexOf(',') - 1 - line.IndexOf('['));
-						string y = line.Substring(line.IndexOf(',') + 1, line.IndexOf(']') - 1 - line.IndexOf(','));
-
-						//Node erzeugen
-						Node n = new Node(name, new Point(Int32.Parse(x), Int32.Parse(y)));
-						if (n != null)
-							Nodes.Add(n);
-					}
-					catch (Exception ex)
-					{
-						Console.Write(ex);
-					}
-				}
-				else if (edgeInLine)
-				{
-					try
-					{
-						string startNodeName = line.Substring(0, line.IndexOf('-'));
-						string endNodeName = line.Substring(line.IndexOf('-') + 1, line.IndexOf('(') - 2 - line.IndexOf('-'));
-						string weigth = line.Substring(line.IndexOf('(') + 1, line.IndexOf(')') - 1 - line.IndexOf('('));
-
-						//find Node Objekts
-						Node startNode = FindNodeByName(startNodeName);
-						Node endNode = FindNodeByName(endNodeName);
-						//Edge Objekt
-						if (startNode != null && endNode != null)
-						{
-							Edge e = new Edge(startNode, endNode, double.Parse(weigth));
-							if (e != null)
-								Edges.Add(e);
-						}
-					}
-					catch (Exception ex)
-					{
-						Console.Write(ex);
-					}
-				}
-			}
 		}
 		
 		/// <summary>
@@ -205,6 +112,15 @@ namespace Algorithm_Collection.Graph
 				sb.Append(n.ToString());
 			}
 			return sb.ToString();
+		}
+
+		public override bool Equals(object obj)
+		{
+			Graph compareTo = obj as Graph;
+			if (compareTo == null)
+				return false;
+
+			return Nodes.SequenceEqual(compareTo.Nodes) && Edges.SequenceEqual(compareTo.Edges);
 		}
 	}
 }

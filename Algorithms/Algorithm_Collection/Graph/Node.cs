@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Algorithm_Collection.Graph
 {
-	public class Node
+	public class Node : IEqualityComparer<Node>
 	{
 		private string _name;
 		/// <summary>
@@ -11,7 +12,7 @@ namespace Algorithm_Collection.Graph
 		public string Name
 		{
 			get { return _name; }
-			set { _name = value.ToLower(); }
+			set { _name = value; }
 		}
 
 		private List<Edge> _connectedEdges;
@@ -198,6 +199,29 @@ namespace Algorithm_Collection.Graph
 					return e.Weight;
 			}
 			return -1.0;
+		}
+
+		public override bool Equals(object obj)
+		{
+			Node compareTo = obj as Node;
+			if (compareTo == null)
+				return false;
+
+			return Location.Equals(compareTo.Location) && Name.Equals(compareTo.Name);
+		}
+
+		public bool Equals(Node x, Node y)
+		{
+			//Check whether the objects are the same object. 
+			if (Object.ReferenceEquals(x, y)) return true;
+
+			//Check whether the products' properties are equal. 
+			return x != null && y != null && x.Name.Equals(y.Name) && x.Location.Equals(y.Location);
+		}
+
+		public int GetHashCode(Node obj)
+		{
+			return obj.GetHashCode();
 		}
 	}
 }

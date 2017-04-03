@@ -24,5 +24,14 @@
 			X = x;
 			Y = y;
 		}
+
+		public override bool Equals(object obj)
+		{
+			Point compareTo = obj as Point;
+			if (compareTo == null)
+				return false;
+
+			return X.Equals(compareTo.X) && Y.Equals(compareTo.Y);
+		}
 	}
 }

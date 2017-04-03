@@ -44,6 +44,7 @@ namespace Algorithm_Collection.Graph
 		/// <param name="end"></param>
 		public Route(Node start, Node end)
 		{
+			NodeList = new List<Node>();
 			InitRoute(start, end);
 		}
 
