@@ -31,10 +31,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Math_Collection">
-      <HintPath>..\..\..\Math_Collection\Math_Collection\Math_Collection\bin\Debug\Math_Collection.dll</HintPath>
+      <HintPath>..\..\..\..\Math_Collection\Math_Collection\Math_Collection\Math_Collection\bin\Debug\Math_Collection.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,6 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Encryption\KeyGenerator.cs" />
+    <Compile Include="Encryption\KeyPair.cs" />
+    <Compile Include="Encryption\KeyRing.cs" />
+    <Compile Include="Encryption\PrivateKey.cs" />
+    <Compile Include="Encryption\PublicKey.cs" />
     <Compile Include="Graph\AStern.cs" />
     <Compile Include="Graph\Dijkstra.cs" />
     <Compile Include="Graph\Edge.cs" />

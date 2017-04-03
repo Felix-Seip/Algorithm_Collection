@@ -7,3 +7,14 @@ H:\Algorithm_Collection\Algorithms\Algorithm_Collection_Tests\bin\Release\Math_C
 H:\Algorithm_Collection\Algorithms\Algorithm_Collection_Tests\obj\Release\Algorithm_Collection_Tests.csprojResolveAssemblyReference.cache
 H:\Algorithm_Collection\Algorithms\Algorithm_Collection_Tests\obj\Release\Algorithm_Collection_Tests.dll
 H:\Algorithm_Collection\Algorithms\Algorithm_Collection_Tests\obj\Release\Algorithm_Collection_Tests.pdb
+C:\Users\Felix\Documents\Software Projects\Algorithm_Collection\Algorithm_Collection\Algorithms\Algorithm_Collection_Tests\bin\Release\Algorithm_Collection_Tests.dll
+C:\Users\Felix\Documents\Software Projects\Algorithm_Collection\Algorithm_Collection\Algorithms\Algorithm_Collection_Tests\bin\Release\Algorithm_Collection_Tests.pdb
+C:\Users\Felix\Documents\Software Projects\Algorithm_Collection\Algorithm_Collection\Algorithms\Algorithm_Collection_Tests\bin\Release\Algorithm_Collection.dll
+C:\Users\Felix\Documents\Software Projects\Algorithm_Collection\Algorithm_Collection\Algorithms\Algorithm_Collection_Tests\bin\Release\Math_Collection.dll
+C:\Users\Felix\Documents\Software Projects\Algorithm_Collection\Algorithm_Collection\Algorithms\Algorithm_Collection_Tests\bin\Release\RuntimeFunctionParser.dll
+C:\Users\Felix\Documents\Software Projects\Algorithm_Collection\Algorithm_Collection\Algorithms\Algorithm_Collection_Tests\bin\Release\Algorithm_Collection.pdb
+C:\Users\Felix\Documents\Software Projects\Algorithm_Collection\Algorithm_Collection\Algorithms\Algorithm_Collection_Tests\bin\Release\Math_Collection.pdb
+C:\Users\Felix\Documents\Software Projects\Algorithm_Collection\Algorithm_Collection\Algorithms\Algorithm_Collection_Tests\bin\Release\RuntimeFunctionParser.pdb
+C:\Users\Felix\Documents\Software Projects\Algorithm_Collection\Algorithm_Collection\Algorithms\Algorithm_Collection_Tests\obj\Release\Algorithm_Collection_Tests.csprojResolveAssemblyReference.cache
+C:\Users\Felix\Documents\Software Projects\Algorithm_Collection\Algorithm_Collection\Algorithms\Algorithm_Collection_Tests\obj\Release\Algorithm_Collection_Tests.dll
+C:\Users\Felix\Documents\Software Projects\Algorithm_Collection\Algorithm_Collection\Algorithms\Algorithm_Collection_Tests\obj\Release\Algorithm_Collection_Tests.pdb

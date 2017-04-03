@@ -5,8 +5,5 @@ C:\Users\Felix\Documents\Algorithm_Collection\Algorithm_Collection\Algorithm_Col
 C:\Users\Felix\Documents\Algorithm_Collection\Algorithm_Collection\Algorithm_Collection\obj\Debug\Algorithm_Collection.pdb
 H:\Algorithm_Collection\Algorithms\Algorithm_Collection\bin\Debug\Algorithm_Collection.dll
 H:\Algorithm_Collection\Algorithms\Algorithm_Collection\bin\Debug\Algorithm_Collection.pdb
-H:\Algorithm_Collection\Algorithms\Algorithm_Collection\bin\Debug\Math_Collection.dll
-H:\Algorithm_Collection\Algorithms\Algorithm_Collection\bin\Debug\Math_Collection.pdb
-H:\Algorithm_Collection\Algorithms\Algorithm_Collection\obj\Debug\Algorithm_Collection.csprojResolveAssemblyReference.cache
 H:\Algorithm_Collection\Algorithms\Algorithm_Collection\obj\Debug\Algorithm_Collection.dll
 H:\Algorithm_Collection\Algorithms\Algorithm_Collection\obj\Debug\Algorithm_Collection.pdb
