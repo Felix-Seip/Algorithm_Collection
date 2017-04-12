@@ -11,7 +11,12 @@ namespace Algorithm_Collection_Tests
         public void TestRSAKeyGeneration()
         {
             KeyGenerator generator = new KeyGenerator("abcdefghijklmnopqrstuvwxyz");
-            generator.GenerateNewKeyPair();
+            KeyPair pair = generator.GenerateNewKeyPair();
+
+            string message = "bla";
+            string encMessage = generator.Encrypt(message, pair.PublicKey);
+            generator.Decrypt(encMessage, pair.PrivateKey);
+
             bool bla = false;
         }
     }
