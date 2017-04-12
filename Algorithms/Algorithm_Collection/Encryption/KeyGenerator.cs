@@ -6,13 +6,13 @@ namespace Algorithm_Collection.Encryption
 {
     public class KeyGenerator
     {
-        private string _password;
         private long _maxPrimeValue;
         private Random _randomGen;
-        public KeyGenerator(string password)
-        {
-            _password = password;
+        public KeyGenerator()
+        { }
 
+        public KeyPair GenerateNewKeyPair(string password)
+        {
             byte[] pass = Encoding.ASCII.GetBytes(password);
             for (int i = 0; i < pass.Length; i++)
             {
@@ -22,9 +22,11 @@ namespace Algorithm_Collection.Encryption
             _randomGen = new Random();
 
             _maxPrimeValue /= 10;
+
+            return CalculateKeyPairValues(password);
         }
 
-        public KeyPair GenerateNewKeyPair()
+        private KeyPair CalculateKeyPairValues(string password)
         {
             long p = 1;
             long q = 1;
@@ -40,8 +42,7 @@ namespace Algorithm_Collection.Encryption
 
             long d = 0;
             d = CalculateD(e, totient);
-
-            return new KeyPair(new PrivateKey(d, n), new PublicKey(e, n));
+            return new KeyPair(new PrivateKey(d, n), new PublicKey(e, n), password);
         }
 
         private void GeneratePrimeSeed(ref long p, ref long q)
@@ -84,16 +85,6 @@ namespace Algorithm_Collection.Encryption
         private bool AreCoprimes(long a, long b)
         {
             return BigInteger.GreatestCommonDivisor(a, b) == 1;
-        }
-
-        public BigInteger Encrypt(long message, PublicKey key)
-        {
-            return BigInteger.Pow(message, (int)key.KeyValues[0]) % key.KeyValues[1];
-        }
-
-        public BigInteger Decrypt(BigInteger encMessage, PrivateKey key)
-        {
-            return BigInteger.Pow(encMessage, (int)key.KeyValues[0]) % key.KeyValues[1];
         }
     }
 }

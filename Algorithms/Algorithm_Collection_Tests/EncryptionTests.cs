@@ -11,11 +11,12 @@ namespace Algorithm_Collection_Tests
         [TestMethod]
         public void TestRSAKeyGeneration()
         {
-            KeyGenerator generator = new KeyGenerator("abcdefghijklmnopqrstuvwxyz");
-            KeyPair pair = generator.GenerateNewKeyPair();
+            EncryptionManager.InitEncryptionManager();
+            EncryptionManager manager = EncryptionManager.GetEncryptionManagerInstance();
+            KeyPair keyPair = manager.GenerateKeyPair("abcdefghijklmnopqrstuvwxyz");
 
-            BigInteger encMessage = generator.Encrypt(123, pair.PublicKey);
-            BigInteger decryptedResult = generator.Decrypt(encMessage, pair.PrivateKey);
+            BigInteger encMessage = manager.Encrypt(123, keyPair.PublicKey);
+            BigInteger decryptedResult = manager.Decrypt(encMessage, keyPair.PrivateKey);
 
             Assert.AreEqual(123, decryptedResult);            
         }

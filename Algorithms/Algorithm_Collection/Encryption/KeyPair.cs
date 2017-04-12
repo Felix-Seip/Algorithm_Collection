@@ -11,10 +11,13 @@ namespace Algorithm_Collection.Encryption
         public PrivateKey PrivateKey { get; private set; }
         public PublicKey PublicKey { get; private set; }
 
-        public KeyPair(PrivateKey privateKey, PublicKey publicKey)
+        private string _password;
+
+        public KeyPair(PrivateKey privateKey, PublicKey publicKey, string password)
         {
             PrivateKey = privateKey;
             PublicKey  = publicKey;
+            _password = password;
         }
 
         public string Encrypt(PublicKey publicKey)
