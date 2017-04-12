@@ -1,6 +1,7 @@
 ﻿using Algorithm_Collection.Encryption;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Numerics;
 
 namespace Algorithm_Collection_Tests
 {
@@ -13,11 +14,10 @@ namespace Algorithm_Collection_Tests
             KeyGenerator generator = new KeyGenerator("abcdefghijklmnopqrstuvwxyz");
             KeyPair pair = generator.GenerateNewKeyPair();
 
-            string message = "bla";
-            string encMessage = generator.Encrypt(message, pair.PublicKey);
-            generator.Decrypt(encMessage, pair.PrivateKey);
+            BigInteger encMessage = generator.Encrypt(123, pair.PublicKey);
+            BigInteger decryptedResult = generator.Decrypt(encMessage, pair.PrivateKey);
 
-            bool bla = false;
+            Assert.AreEqual(123, decryptedResult);            
         }
     }
 }
