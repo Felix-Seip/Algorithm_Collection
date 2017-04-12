@@ -21,7 +21,7 @@ namespace Algorithm_Collection.Encryption
 
             _randomGen = new Random();
 
-            _maxPrimeValue = _maxPrimeValue * _randomGen.Next(1, 100);
+            _maxPrimeValue /= 10;
         }
 
         public KeyPair GenerateNewKeyPair()
@@ -37,7 +37,12 @@ namespace Algorithm_Collection.Encryption
             {
                 s = _randomGen.Next(1, (int)m);
             }
-            long t = CalculateT(s, m);
+
+            long t = 0;
+            //while (t < s)
+            //{
+                t = CalculateT(s, m);
+            //}
 
             return new KeyPair(new PrivateKey(t, k), new PublicKey(s, k));
         }
@@ -46,8 +51,8 @@ namespace Algorithm_Collection.Encryption
         {
             while (!IsPrimeNubmer(p) || !IsPrimeNubmer(q))
             {
-                p = _randomGen.Next(1, (int)_maxPrimeValue / 10);
-                q = _randomGen.Next(1, (int)_maxPrimeValue / 10);
+                p = _randomGen.Next(1, (int)_maxPrimeValue);
+                q = _randomGen.Next(1, (int)_maxPrimeValue);
             }
         }
 
@@ -60,7 +65,7 @@ namespace Algorithm_Collection.Encryption
                 {
                     return t;
                 }
-            }   
+            }
             return 0;
         }
 
@@ -82,6 +87,30 @@ namespace Algorithm_Collection.Encryption
         private bool AreCoprimes(long a, long b)
         {
             return BigInteger.GreatestCommonDivisor(a, b) == 1;
+        }
+
+        public string Encrypt(string message, PublicKey key)
+        {
+            byte[] pass = Encoding.ASCII.GetBytes(message);
+            byte[] mess = new byte[pass.Length];
+            for (int i = 0; i < pass.Length; i++)
+            {
+                long bla = (long)((Math.Pow(pass[i], key.KeyValues[0]) % key.KeyValues[1]));
+                mess[i] = (byte)((Math.Pow(pass[i], key.KeyValues[0]) % key.KeyValues[1]));
+            }
+            return Encoding.ASCII.GetString(mess);
+        }
+
+        public void Decrypt(string encMessage, PrivateKey key)
+        {
+            byte[] pass = Encoding.UTF8.GetBytes(encMessage);
+            byte[] mess = new byte[pass.Length];
+            for (int i = 0; i < pass.Length; i++)
+            {
+                mess[i] = (byte)((Math.Pow(pass[i], key.KeyValues[0])) % key.KeyValues[1]);
+            }
+            string bla = Encoding.ASCII.GetString(mess);
+            bool bla1 = false;
         }
     }
 }
