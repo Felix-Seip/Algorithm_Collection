@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Encryption\EncryptionManager.cs" />
     <Compile Include="Encryption\KeyGenerator.cs" />
     <Compile Include="Encryption\KeyPair.cs" />
     <Compile Include="Encryption\KeyRing.cs" />

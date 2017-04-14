@@ -13,12 +13,12 @@ namespace Algorithm_Collection_Tests
         {
             EncryptionManager.InitEncryptionManager();
             EncryptionManager manager = EncryptionManager.GetEncryptionManagerInstance();
-            KeyPair keyPair = manager.GenerateKeyPair("abcdefghijklmnopqrstuvwxyz");
+            KeyPair keyPair = manager.GenerateKeyPair("HelloBumStinkInTheFace");
+            
+            string mess = manager.EncryptStringMessage("ByeBumStinkInTheFace", keyPair.PublicKey);
+            mess = manager.DecryptStringMessage(mess, keyPair.PrivateKey);
 
-            BigInteger encMessage = manager.Encrypt(123, keyPair.PublicKey);
-            BigInteger decryptedResult = manager.Decrypt(encMessage, keyPair.PrivateKey);
-
-            Assert.AreEqual(123, decryptedResult);            
+            Assert.AreEqual("ByeBumStinkInTheFace", mess);            
         }
     }
 }
