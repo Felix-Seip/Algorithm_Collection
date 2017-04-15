@@ -11,8 +11,7 @@ namespace Algorithm_Collection_Tests
         [TestMethod]
         public void TestRSAKeyGeneration()
         {
-            EncryptionManager.InitEncryptionManager();
-            EncryptionManager manager = EncryptionManager.GetEncryptionManagerInstance();
+			EncryptionManager manager = EncryptionManager.Instance;
             KeyPair keyPair = manager.GenerateKeyPair("HelloBumStinkInTheFace");
             
             string mess = manager.EncryptStringMessage("ByeBumStinkInTheFace", keyPair.PublicKey);

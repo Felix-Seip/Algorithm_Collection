@@ -5,23 +5,30 @@ namespace Algorithm_Collection.Encryption
 {
     public class EncryptionManager
     {
-        private static EncryptionManager _encryptionManager;
+        private static EncryptionManager _instance;
+		/// <summary>
+		/// Singelton Instance of EncryptionManager
+		/// </summary>
+		public static EncryptionManager Instance
+		{
+			get
+			{
+				if (_instance == null)
+					_instance = new EncryptionManager();
+
+				return _instance;
+			}
+
+			private set { }
+		}
+
         private static KeyGenerator _keyGenerator;
 
         private EncryptionManager()
-        { }
-
-        public static void InitEncryptionManager()
         {
-            _encryptionManager = new EncryptionManager();
-            _keyGenerator = new KeyGenerator();
-        }
-
-        public static EncryptionManager GetEncryptionManagerInstance()
-        {
-            return _encryptionManager;
-        }
-
+			_keyGenerator = new KeyGenerator();
+		}
+		
         public KeyPair GenerateKeyPair(string password)
         {
             return _keyGenerator.GenerateNewKeyPair(password);
