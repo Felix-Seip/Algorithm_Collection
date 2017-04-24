@@ -1,8 +1,7 @@
-\Algorithms\Algorithm_Collection\bin\Debug/
-\Algorithms\Algorithm_Collection\bin\Release/
+[Bb]in\
+[Oo]bj\
 *.pdb
 *.cache
-*.dll
 
 # NuGet Packages
 *.nupkg
