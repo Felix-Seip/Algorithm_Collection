@@ -30,8 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Math_Collection">
-      <HintPath>..\..\..\..\Math_Collection\Math_Collection\Math_Collection\Math_Collection\bin\Debug\Math_Collection.dll</HintPath>
+    <Reference Include="Math_Collection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Math_Collection.0.0.9\lib\Math_Collection.dll</HintPath>
+    </Reference>
+    <Reference Include="RuntimeFunctionParser, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RuntimeFunctionParser.0.0.8\lib\RuntimeFunctionParser.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,6 +63,9 @@
     <Compile Include="Graph\Route.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sort Algorithms\MySortList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
