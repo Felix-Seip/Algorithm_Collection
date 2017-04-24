@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Algorithm_Collection</id>
+    <version>1.0.0</version>
+    <authors>Christian Bechtluft, Felix Seip</authors>
+    <owners>Christian Bechtluft</owners>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/Felix-Seip/Algorithm_Collection</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>A Collection of Algorithms</description>
+    <copyright>Copyright 2017</copyright>
+    <tags>Algorithm Collection C# Seip-Gurantee</tags>
+    <dependencies>
+      <dependency id="Math_Collection" version="0.1.0" />
+    </dependencies>
+  </metadata>
+</package>
